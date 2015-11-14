@@ -29,6 +29,7 @@
     <link href="./chat_files/orange.css" media="all" rel="alternate stylesheet" title="orange-theme" type="text/css">
     <link href="./chat_files/magenta.css" media="all" rel="alternate stylesheet" title="magenta-theme" type="text/css">
     <link href="./chat_files/gray.css" media="all" rel="alternate stylesheet" title="gray-theme" type="text/css">
+    <link href="./css/magic.min.css" rel="stylesheet" type="text/css">
     <div class="fit-vids-style" id="fit-vids-style" style="display: none;">
     <style>
     .fluid-width-video-wrapper{width:100%;position:relative;padding:0;}
@@ -202,6 +203,9 @@
                   </li>
                 </ul>
               </div>
+              <div>
+                  <label id="wightShow" label class="display:noe"></lable>
+              </div>
               <div class="post-message">
                 <input id="messageText" class="form-control" placeholder="输入需要发送的信息…" type="text"><input id="sendBtn" type="submit" value="发送">
               </div>
@@ -217,7 +221,18 @@
         $("#sendBtn").click(function(){
             if ($("#messageText").val() == "love") {
                 showLove();
+            } else if (($("#messageText").val() == "Dad") ||
+                    ($("#messageText").val()== "爸爸")) {
+                $("#wightShow").text($("#messageText").val());
+                $("#wightShow").removeClass();
+                $("#wightShow").fadeIn(2);
+                $("#wightShow").addClass("magictime puffIn");
+                setTimeout(function(){
+                    $("#wightShow").hide();
+                }, 1000);
             }
+
+
         });
     })  
     </script>
